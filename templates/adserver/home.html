@@ -1,0 +1,143 @@
+<!-- templates/adserver/home.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <style>
+    /* Custom CSS styles */
+    .header {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .nav-list li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .nav-list li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-list li a:hover {
+      color: #ff0000;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .section p {
+      line-height: 1.5;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    // Custom JavaScript code
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add your JavaScript code here
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <h1>Welcome to the AdServer</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'ad_list' %}">Ad List</a></li>
+        <li><a href="{% url 'campaign_list' %}">Campaign List</a></li>
+        <li><a href="{% url 'advertiser_list' %}">Advertiser List</a></li>
+        <li><a href="{% url 'platform_list' %}">Platform List</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="section">
+    <h2>Introduction</h2>
+    <p>
+      Welcome to the AdServer application! This platform allows you to manage ads, campaigns, advertisers, and platforms for your advertising needs.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Manage and track your ads and campaigns.</li>
+      <li>Target specific audiences with precise demographics.</li>
+      <li>Analyze performance and optimize your advertising strategy.</li>
+      <!-- Add more features as needed -->
+    </ul>
+  </section>
+
+
+  <section class="section">
+    <h2>Getting Started</h2>
+    <p>
+      To get started, navigate to the respective pages using the navigation menu above. You can view and manage ads, campaigns, advertisers, and platforms.
+    </p>
+    <p>
+      If you have any questions or need assistance, please don't hesitate to contact our support team. We're here to help you make the most of your advertising efforts.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Next Steps</h2>
+    <p>
+      After familiarizing yourself with the basics, you can explore the advanced features of the AdServer application. Some of the next steps you can take include:
+    </p>
+    <ul>
+      <li>Creating new ads and campaigns</li>
+      <li>Managing targeting options for your ads</li>
+      <li>Analyzing ad performance and optimizing your campaigns</li>
+      <li>Exploring different pricing models and platforms</li>
+    </ul>
+  </section>
+  
+  
+  <footer class="footer">
+    <p>&copy; 2023 AdServer. All rights reserved. | Designed by YourCompany</p>
+  </footer>
+  
+  </body>
+</html>

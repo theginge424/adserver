@@ -1,0 +1,18 @@
+<!-- templates/adserver/ad_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ad List</title>
+</head>
+<body>
+  <h1>Ad List</h1>
+  <ul>
+    {% for ad in ads %}
+      <li>{{ ad.title }}</li>
+    {% empty %}
+      <li>No ads available.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

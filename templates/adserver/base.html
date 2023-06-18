@@ -1,0 +1,34 @@
+{% load static %}
+
+<!-- templates/adserver/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IJR Marketing Ad Server</title>
+    <!-- Include your CSS and JavaScript files -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>IJR Marketing Ad Server</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- Add the content specific to each template here -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 IJR Marketing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
